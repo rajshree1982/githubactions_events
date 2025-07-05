@@ -2,7 +2,15 @@ name: Events Demo 1
 on:
   pull_request:
     types: [opened]
+    branches:
+      - main
+    paths:
+      - 'src/**'
+      - '.github/workflows/demo1.yml'
   workflow_dispatch:
+  push:
+    branches:
+      - main
 jobs:
   deploy:
     runs-on: ubuntu-latest
